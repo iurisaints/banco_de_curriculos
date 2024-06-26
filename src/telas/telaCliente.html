@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Vagas</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerenciamento de Vagas</h1>
+
+    <h2>Adicionar Vaga</h2>
+    <form id="formAdicionarVaga">
+        <label for="nomeVaga">Nome:</label>
+        <input type="text" id="nomeVaga" name="nomeVaga" required>
+
+        <label for="enderecoVaga">Endereço:</label>
+        <input type="text" id="enderecoVaga" name="enderecoVaga" required>
+
+        <label for="linkVaga">Link:</label>
+        <input type="link" id="linkVaga" name="linkVaga" required>
+
+        <label for="telefoneVaga">Telefone:</label>
+        <input type="text" id="telefoneVaga" name="telefoneVaga" required>
+
+        <button type="button" onclick="adicionarVaga()">Adicionar</button>
+    </form>
+
+    <h2>Listar Vagas</h2>
+    <ul id="listaVagas"></ul>
+
+    <script src="../clients/vagas.js"></script>
+
+</body>
+</html>

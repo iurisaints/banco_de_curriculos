@@ -1,0 +1,16 @@
+{
+  "Vaga": [
+    {
+      "nome": "Vaga de Emprego Legal",
+      "endereco": "Rua dos Empregos",
+      "link": "empregomuitobom.com",
+      "telefone": "51999999999"
+    },
+    {
+      "nome": "Vaga SKA",
+      "endereco": "av unisinos",
+      "link": "ska.com",
+      "telefone": "55555"
+    }
+  ]
+}
