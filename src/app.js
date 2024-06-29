@@ -1,5 +1,5 @@
 const express = require('express');
-const vagasRouter = require('./controllers/controllerClientes');
+const vagasRouter = require('./controllers/controllerVagas');
 const cors = require('cors');
 
 const app = express();
