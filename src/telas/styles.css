@@ -6,8 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start; /* Altera para flex-start para que o conteúdo comece no topo */
+    min-height: 100vh; /* Usa min-height em vez de height */
 }
 
 header {
@@ -17,6 +17,9 @@ header {
     text-align: center;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima do restante do conteúdo */
 }
 
 main {
