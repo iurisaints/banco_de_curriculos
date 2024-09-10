@@ -1,17 +1,15 @@
 const express = require('express');
-const server = express();
 const fs = require('fs');
-const bancoCurriculos = require('./data/bancoCurriculos.json');
-
-server.use(express.json());
+const bancoCurriculos = require('../data/bancoCurriculos.json');
+const router = express.Router(); // Usando o router do Express
 
 // Endpoint para listar todos os currículos
-server.get('/curriculos', (req, res) => {
+router.get('/curriculos', (req, res) => {
     return res.json(bancoCurriculos.curriculos);
 });
 
 // Endpoint para adicionar um novo currículo
-server.post('/curriculos', (req, res) => {
+router.post('/curriculos', (req, res) => {
     const novoCurriculo = req.body;
 
     // Verificar se todos os campos estão preenchidos
@@ -27,7 +25,7 @@ server.post('/curriculos', (req, res) => {
 });
 
 // Endpoint para atualizar um currículo existente
-server.put('/curriculos/:id', (req, res) => {
+router.put('/curriculos/:id', (req, res) => {
     const curriculoId = parseInt(req.params.id);
     const atualizarCurriculo = req.body;
 
@@ -49,7 +47,7 @@ server.put('/curriculos/:id', (req, res) => {
 });
 
 // Endpoint para deletar um currículo
-server.delete("/curriculos/:id", (req, res) => {
+router.delete('/curriculos/:id', (req, res) => {
     const curriculoId = parseInt(req.params.id);
     bancoCurriculos.curriculos = bancoCurriculos.curriculos.filter((_, index) => index !== curriculoId);
     salvarDadosCurriculos(bancoCurriculos);
@@ -59,9 +57,8 @@ server.delete("/curriculos/:id", (req, res) => {
 
 // Função para salvar os dados no arquivo JSON
 function salvarDadosCurriculos() {
-    fs.writeFileSync(__dirname + '/data/bancoCurriculos.json', JSON.stringify(bancoCurriculos, null, 2));
+    fs.writeFileSync(__dirname + '/../data/bancoCurriculos.json', JSON.stringify(bancoCurriculos, null, 2));
 }
 
-server.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
-});
+// Exportando o roteador
+module.exports = router;
