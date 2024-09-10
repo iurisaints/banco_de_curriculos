@@ -1,0 +1,10 @@
+{
+  "curriculos": [
+    {
+      "nome": "João da Silva",
+      "endereco": "Rua A, 123",
+      "linkParaCurriculo": "http://curriculo-joao.com.br",
+      "telefone": "(11) 99999-9999"
+    }
+  ]
+}

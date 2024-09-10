@@ -1,11 +1,13 @@
 const express = require('express');
-const vagasRouter = require('./controllers/controllerVagas');
+const curriculosRouter = require('./controllers/controllerCurriculos'); // Importa o controller de currículos
 const cors = require('cors');
 
 const app = express();
-app.use(cors()); // Adicione esta linha para configurar o CORS
+app.use(cors()); // Permite o CORS (Cross-Origin Resource Sharing)
+app.use(express.json()); // Necessário para interpretar JSON no body das requisições
 
-app.use('/api', vagasRouter.server); // '/api/vagas'
+// Definir a rota base para os currículos
+app.use('/api', curriculosRouter.server); // '/api/curriculos'
 
 app.listen(3000, () => {
     console.log('O servidor está funcionando! :D');
